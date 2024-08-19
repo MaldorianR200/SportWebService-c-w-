@@ -1,0 +1,50 @@
+
+$red: #f00;
+$black: #000;
+$white: #fff;
+$light-white: #aaa;
+$light-bg: #111;
+
+.header {
+  margin-top: 100px;
+  color: $light-white;
+  margin-left: 600px;
+}
+
+.container {
+  margin-left: 300px;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 0 0 35%;
+  color: $light-white;
+  max-width: 500px;
+  margin-bottom: 8px;
+}
+
+.block {
+  font-size: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.img {
+  width: 320px;
+}
+
+.text {
+  width: 400px;
+  font-size: 15px;
+}
+
+/* @media запрос для изменения стилей на более узких экранах */
+@media screen and (max-width: 368px) {
+  .card {
+    flex: 0 0 50%; /* Уменьшаем ширину блоков до 50% на узких экранах */
+  }
+}
+
+

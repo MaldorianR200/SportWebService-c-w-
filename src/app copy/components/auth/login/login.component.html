@@ -1,0 +1,46 @@
+
+
+<div class="login">
+  <div class="login-screen">
+    <div class="app-title">
+      <h1>Login</h1>
+    </div>
+
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()"  >
+      <div class="control-group">
+        <input  type="text" placeholder="Email" formControlName="email" required  >
+        <label  type="email" name="email" class="login-field-icon fui-user" for="login-name"></label>
+        <span *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"></span>
+        <span *ngIf="loginForm.get('email')?.hasError('required')">Поле: "Email" не может быть пустым</span>
+        <span *ngIf="loginForm.get('email')?.hasError('pattern')">Неверный формат email</span>
+      </div>
+
+      <div class="control-group">
+        <input type="password" name="password" formControlName="password" placeholder="Пароль" required>
+        <label class="login-field-icon fui-user" for="login-name"></label>
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('email')?.touched"></div>
+        <span *ngIf="loginForm.get('password')?.hasError('required')">Поле: "Пароль" не может быть пустым</span>
+        <span *ngIf="loginForm.get('password')?.hasError('pattern')">Пароль меньше 8 символов</span>
+      </div>
+        <button type="login" class="btn btn-primary btn-large btn-block"
+        [ngClass]="{'active-button': !loginForm.invalid}"
+        [disabled]="loginForm.invalid "
+        >Вход</button>
+        <a class="login-link" routerLink="/auth/registration">Регистрация</a>
+
+
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

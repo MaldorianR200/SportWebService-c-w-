@@ -1,0 +1,141 @@
+<header>
+  <app-header></app-header>
+</header>
+
+
+
+<div class="page-content page-container" id="page-content">
+  <div class="padding">
+      <div class="row container d-flex justify-content-center">
+        <div class="col-xl-6 col-md-12">
+          <div class="card user-card-full">
+            <div class="row m-l-0 m-r-0">
+              <div class="col-sm-4 bg-c-lite-green user-profile">
+                <div class="card-block text-center text-white">
+                  <div class="m-b-25">
+                    <div class="avatar-container">
+                      <img *ngIf="avatarUrl" [src]="avatarUrl" alt="Avatar" class="img-fluid my-5" style="width: 250px;">
+                      <div *ngIf="!avatarUrl" class="placeholder">Выберите изображение</div>
+                    </div>
+                  </div>
+                  <input type="file" (change)="onFileSelected($event)" accept="image/*">
+                  <h6 class="f-w-600">Пользователь</h6>
+                  <p>{{this.userData.fitnessLevel}}</p>
+                  <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                </div>
+              </div>
+              <div class="col-sm-8">
+              <div class="card-block">
+                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Личная информация</h6>
+                <div class="row" *ngIf="!isEditing">
+
+                  <div class="col-sm-6">
+                    <label class="m-b-10 f-w-600">Email</label>
+                    <h6 class="text-muted f-w-400">{{userData.email}}</h6>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <label class="m-b-10 f-w-600">Имя</label>
+                    <h6 class="text-muted f-w-400">{{userData.name}}</h6>
+                  </div>
+                  <button  (click)="toggleEdit()">Редактировать</button>
+                </div>
+                <div class="row" *ngIf="isEditing">
+
+                  <div class="col-sm-6">
+                    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                      <div class="col-sm-6">
+                        <label class="m-b-10 f-w-600">Email</label>
+                        <input type="email" id="email"  formControlName="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}">
+                        <div *ngIf="userForm.controls['email'].invalid && (userForm.controls['email'].dirty || userForm.controls['email'].touched)">
+                          <span>Неправильный формат email</span>
+                        </div>
+                      </div>
+
+                      <button type="submit"  [disabled]="userForm.invalid" >Сохранить</button>
+                    </form>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <form [formGroup]="userForm2" (ngSubmit)="onSubmit2()">
+                      <div class="col-sm-6">
+                        <label class="m-b-10 f-w-600">Имя</label>
+                        <input type="text" id="name" formControlName="name" name="name" required>
+                        <div *ngIf="userForm2.controls['name'].invalid && (userForm2.controls['name'].dirty || userForm2.controls['name'].touched)">
+                          <span>Имя слишком короткое</span>
+                        </div>
+                      </div>
+                      <button type="submit"  [disabled]="userForm2.invalid" >Сохранить</button>
+                    </form>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <form [formGroup]="userForm3" (ngSubmit)="onSubmit3()">
+                      <div class="col-sm-6">
+                        <label class="m-b-10 f-w-600">Вес</label>
+                        <input type="number" id="weight" formControlName="weight" name="weight" required>
+                      </div>
+                      <button type="submit"  [disabled]="userForm3.invalid" >Сохранить</button>
+                    </form>
+                  </div>
+
+                  <div class="col-sm-6 fitness-level">
+                    <label class="m-b-10 f-w-600">Уровень подготовки</label>
+                    <div>
+                      <label>
+                        <input type="radio" name="fitnessLevel" [(ngModel)]="selectedFitnessLevel" value="Новичок"> Новичок
+                      </label>
+                      <label>
+                        <input type="radio" name="fitnessLevel" [(ngModel)]="selectedFitnessLevel" value="Средний"> Средний
+                      </label>
+                      <label>
+                        <input type="radio" name="fitnessLevel" [(ngModel)]="selectedFitnessLevel" value="Высокий"> Высокий
+                      </label>
+                    </div>
+                    <button (click)="onSubmitFitnessLevel()">Сохранить</button>
+                  </div>
+
+
+                  <button type="button" (click)="toggleEdit()">Отмена</button>
+
+                </div>
+                <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Статистика</h6>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <p class="m-b-10 f-w-600">Количество тренировок</p>
+                      <h6 class="text-muted f-w-400">{{userData.workoutCount}}</h6>
+                    </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Ваш вес</p>
+                    <h6 class="text-muted f-w-400">{{userData.weight}}</h6>
+                  </div>
+                  <div class="row">
+                    <div class="historyWorkout">
+                      <h2>История тренировок</h2>
+                      <ul>
+                        <li *ngFor="let workout of historyWorkout.slice(0, 10)">
+                          <strong>Дата:</strong> {{ workout.date }} |
+                          <strong>Тип тренировки:</strong> {{ workout.type }} |
+                          <strong>Пульс:</strong> {{ workout.pulse}}
+                          <button type="submit" (click)="removeRecord(workout.date)">Удалить запись</button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<footer>
+  <app-footer></app-footer>
+</footer>
+
+
+

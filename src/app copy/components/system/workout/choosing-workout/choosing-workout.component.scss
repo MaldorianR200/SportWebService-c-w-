@@ -1,0 +1,58 @@
+
+
+$red: #f00;
+$black: #000;
+$white: #fff;
+$light-white: #aaa;
+$light-bg: #111;
+
+
+/* Стили для контейнера изображений */
+.image-container {
+  margin-top: 50px;
+  margin-left: 150px;
+  display: flex;
+  gap: 20px; /* Расстояние между изображениями */
+
+}
+
+/* Стили для ссылки-изображения */
+.image-link {
+  text-decoration: none; /* Убираем стандартное подчеркивание ссылок */
+  /* Можно добавить дополнительные стили по желанию */
+}
+
+/* Стили для изображения */
+.image-link img {
+  margin-top: 80px;
+  width: 40rem;
+  height: auto; /* Поддержка соотношения сторон */
+  border: 1px solid #ccc; /* Добавляем рамку для изображений */
+  border-radius: 5px; /* Скругляем углы рамки */
+}
+
+.image-link img:hover {
+  width: 45rem;
+}
+
+.image-title {
+  color: $red;
+  text-align: center;
+  font-size: 2rem;
+}
+
+
+@media (max-width:1050px) {
+  .image-link img {
+    width: 20rem;
+  }
+  .image-link img:hover {
+    width: 22rem;
+  }
+  .image-container {
+    margin-top: 50px;
+    margin-left: 140px;
+    display: flex;
+    gap: 20px; /* Расстояние между изображениями */
+  }
+}

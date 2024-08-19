@@ -1,0 +1,14 @@
+<header>
+</header>
+
+
+<main>
+  <div class="image-container">
+    <div *ngFor="let image of images" class="image-link">
+      <a [routerLink]="[image.route]">
+        <img [src]="image.src" [alt]="image.alt" >
+        <p class="image-title">{{image.titel}}</p>
+      </a>
+    </div>
+  </div>
+</main>

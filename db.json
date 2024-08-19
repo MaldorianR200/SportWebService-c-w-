@@ -1,0 +1,103 @@
+{
+  "users": [
+    {
+      "name": "STANISLAV",
+      "email": "zelenkovstanislav@yandex.ru",
+      "password": "12345678",
+      "workoutCount": 0,
+      "weight": 87,
+      "pulse": 0,
+      "isAuthenticated": true,
+      "fitnessLevel": "Средний",
+      "id": 1
+    },
+    {
+      "name": "Stas",
+      "email": "st@yandex.ru",
+      "password": "12345678",
+      "workoutCount": 0,
+      "weight": 85,
+      "pulse": 0,
+      "isAuthenticated": true,
+      "fitnessLevel": "",
+      "id": 2
+    },
+    {
+      "name": "Stas",
+      "email": "s1t@yandex.ru",
+      "password": "12345678",
+      "workoutCount": 0,
+      "weight": 88,
+      "pulse": 0,
+      "isAuthenticated": true,
+      "fitnessLevel": "",
+      "id": 3
+    }
+  ],
+  "history": [
+    {
+      "userId": 2,
+      "workoutId": 1,
+      "type": "Силовая тренировка",
+      "date": "2023-11-30T18:52:32.920Z",
+      "pulse": 196,
+      "id": 2
+    },
+    {
+      "userId": 3,
+      "workoutId": 1,
+      "type": "Силовая тренировка",
+      "date": "2023-12-19T10:49:57.929Z",
+      "pulse": 200,
+      "id": 6
+    },
+    {
+      "userId": 3,
+      "workoutId": 1,
+      "type": "Силовая тренировка",
+      "date": "2023-12-19T10:56:46.462Z",
+      "pulse": 200,
+      "id": 7
+    },
+    {
+      "userId": 3,
+      "workoutId": 2,
+      "type": "Кардио тренировка",
+      "date": "2023-12-19T13:02:49.625Z",
+      "pulse": 222,
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "workoutId": 1,
+      "type": "Силовая тренировка",
+      "date": "2023-12-23T09:31:43.854Z",
+      "pulse": 250,
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "workoutId": 1,
+      "type": "Силовая тренировка",
+      "date": "2023-12-23T09:44:57.336Z",
+      "pulse": 250,
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "workoutId": 1,
+      "type": "Силовая тренировка",
+      "date": "2023-12-23T13:09:06.728Z",
+      "pulse": 200,
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "workoutId": 1,
+      "type": "Силовая тренировка",
+      "date": "2023-12-28T17:20:19.987Z",
+      "pulse": 222,
+      "id": 12
+    }
+  ]
+}

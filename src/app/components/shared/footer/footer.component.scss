@@ -1,0 +1,38 @@
+$red: #f00;
+$black: #000;
+$white: #fff;
+$light-white: #aaa;
+$light-bg: #111;
+
+.footer {
+  z-index: 10;
+  border-top: 1px solid #cccccc;
+  bottom: 0;
+  color: $light-white;
+  font-size: 14px;
+  padding-top: 10px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  width: 100%;
+}
+
+.link {
+  color: $red; /* Цвет текста */
+  font-size: 1.5rem;
+  text-decoration: none; /* Убираем подчеркивание ссылки */
+}
+
+.link:hover {
+  text-decoration: underline; /* Подчеркиваем ссылку при наведении */
+}
+
+
+
+
+@media (max-width:768px) {
+  .footer{
+    position: fixed;
+  }
+
+}

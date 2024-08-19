@@ -1,0 +1,101 @@
+@font-face {
+  font-family: Banc_Gothic;
+  src: url(../../../../../assets/fonts/Banck_Gothic/Bank_Gothic.woff2) format("woff2"),
+  url(../../../../../assets/fonts/Banck_Gothic/Bank_Gothic.woff) format("woff");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Mulish:ital,wght@1,400;1,800&display=swap');
+
+$red: #f00;
+$red-dark: #5e0404;
+$black: #000;
+$white: #fff;
+$light-white: #aaa;
+$light-bg: #111;
+
+
+
+
+header {
+  background-color: $light-bg;
+  color: $red;
+  text-align: center;
+  padding: 20px 0;
+}
+
+h1 {
+  font-family: Banc_Gothic;
+  margin: 0;
+}
+
+h2 {
+  color: $red-dark;
+  font-family: Banc_Gothic;
+}
+
+main {
+  padding: 20px;
+}
+
+.exercise-list {
+  color: $white;
+  list-style: none;
+  padding: 0;
+}
+
+.exercise {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.exercise h2 {
+  margin-top: 0;
+}
+
+.exercise p {
+  font-family: 'Inter', sans-serif;
+
+  margin-bottom: 0;
+}
+
+.workout-tracker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.workout-select {
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.pulse-input {
+  color: $red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.pulse-number-input {
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.add-button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #2980b9;
+}

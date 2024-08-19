@@ -1,0 +1,44 @@
+<header>
+  <app-header></app-header>
+</header>
+
+<h2 class="header">Тренерский состав</h2>
+<main class="container">
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title-group class="block">
+        <mat-card-title>Юрий Александрович Спасокукоцкий</mat-card-title>
+        <img class="img" mat-card-xl-image src="../../../../assets/images/YuriS.jpeg">
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content class="text">
+      {{trainer1}}
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title-group class="block">
+        <mat-card-title>Дмитрий Голубочкин</mat-card-title>
+        <img class="img" mat-card-xl-image src="../../../../assets/images/Dmitri.jpg" >
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content class="text">
+      {{trainer2}}
+    </mat-card-content>
+  </mat-card>
+</main>
+
+<div style="margin-bottom: 100px;">
+  <svg width="150" height="150">
+    <circle cx="75" cy="75" r="50" [attr.fill]="checked ? '#FF5733' : 'transparent'" />
+    <circle cx="75" cy="75" r="50" [attr.fill]="checked ? 'transparent' : '#14db35'" />
+  </svg>
+  <label>
+    <input type="checkbox" [(ngModel)]="checked"> Сменить цвет
+  </label>
+</div>
+
+<footer>
+  <app-footer></app-footer>
+</footer>

@@ -1,0 +1,80 @@
+*{
+  font-family: 'Mulish', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  
+  outline: none;
+  border: none;
+  transition: all .2s linear;
+}
+
+$red: #f00;
+$black: #000;
+$white: #000;
+$light-white: #aaa;
+$light-bg: #111;
+
+html {
+
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    background: $black;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $red;
+  }
+
+  body {
+    background: $black;
+  }
+
+
+}
+
+
+
+
+@media (max-width:768px) {
+
+  #menu-btn {
+    display: inline-block;
+  }
+
+  // &.fa-times {
+  //   transform: rotate(180deg);
+  // }
+
+  .header {
+    padding: 0 2rem;
+
+    .navigation {
+      position: absolute;
+      top:99%; left:0; right: 00;
+      background: $black;
+    }
+
+    a {
+      display: block;
+      font-size: 2rem;
+    }
+  }
+}
+
+
+@media (max-width:450px) {
+  html {
+    font-size: 55%;
+  }
+}
+
